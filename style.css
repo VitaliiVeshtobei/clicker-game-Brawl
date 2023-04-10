@@ -116,6 +116,18 @@ main {
   scale: 1.1;
 }
 
+.hero-section {
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+.hero-container {
+  width: 500px;
+}
+.hero-img {
+  width: 100%;
+}
+
 .footer {
   padding: 30px 0;
   font-size: 24px;
