@@ -1,6 +1,10 @@
 import { refs } from "../js/refs.js";
+import { setHeroHp } from "./setHeroHp.js";
+import { setHeroPage } from "./setHeroPage.js";
+import { setLevel } from "./setLevel.js";
 
 refs.form.addEventListener("submit", handleSubmit);
+refs.hero.addEventListener("click", handleClick);
 
 function handleSubmit(e) {
   e.preventDefault();
@@ -15,14 +19,10 @@ function handleSubmit(e) {
   localStorage.setItem("form", JSON.stringify(data));
 
   // показуємо секцію hero , змінюємо фон
-
-  refs.body.style.backgroundImage = `url("../images/background/iapqmzd3zu721.jpg")`;
-  refs.heroSection.style.display = "flex";
-  console.log(refs.infoName);
-  refs.infoName.textContent = data.name;
+  setHeroPage(data);
 }
 
-refs.hero.addEventListener("click", handleClick);
+let levelId = 1;
 
 function handleClick() {
   let countScore = +refs.infoScore.textContent;
@@ -30,7 +30,8 @@ function handleClick() {
   let allClicks = +refs.infoAllClick.textContent;
   refs.infoAllClick.textContent = allClicks + 1;
   let hp = refs.enemyHp.offsetHeight;
-  const oneHit = 100 / 20;
-
-  refs.enemyHp.style.height = `${hp - oneHit}px`;
+  setHeroHp(hp, levelId);
+  if (!hp) {
+    setLevel((levelId += 1));
+  }
 }
