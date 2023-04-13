@@ -12,6 +12,8 @@ export function setHeroPage(user) {
   refs.infoAllClick.textContent = "0";
   refs.enemyHp.style.height = "100%";
   refs.enemyHp.style.backgroundColor = "#32c12c";
+  refs.yourHp.style.height = "100%";
+  refs.yourHp.style.backgroundColor = "#32c12c";
 }
 
 export function closeHeroPage() {

@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brawl Clicker</title>
-    <link rel="icon" type="image/png" href="./images/favicon/favicon-brawl.png">
+    <link
+      rel="icon"
+      type="image/png"
+      href="./images/favicon/favicon-brawl.png"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -75,12 +79,22 @@
               alt="vorona"
             />
           </div>
-          <div class="hero-enemy">
-            <p class="hero-enemy-text">
-              <span class="hero-name">Enemy</span> HP
-            </p>
-            <div class="hero-enemy-hp-container">
-              <div class="hero-enemy-hp"></div>
+          <div class="hero-hp-container">
+            <div class="hero-enemy">
+              <p class="hero-enemy-text">
+                <span class="hero-name">Enemy</span> HP
+              </p>
+              <div class="hero-enemy-hp-container">
+                <div class="hero-enemy-hp" id="enemy-hp"></div>
+              </div>
+            </div>
+            <div class="hero-enemy">
+              <p class="hero-enemy-text">
+                <span class="hero-name">Your</span> HP
+              </p>
+              <div class="hero-enemy-hp-container">
+                <div class="hero-enemy-hp" id="your-hp"></div>
+              </div>
             </div>
           </div>
         </section>
@@ -95,17 +109,21 @@
         </h2>
         <button class="modal-btn" id="next-level">Next level</button>
       </div>
-    </div>
       <div class="modal-finish">
         <h2>
-          Congratulations, you have passed the
-          all level! Now you can restart the game or change user!
+          Congratulations, you have passed the all level! Now you can restart
+          the game or change user!
         </h2>
         <ul class="list-hero"></ul>
         <button class="modal-btn" id="finish-restart">Restart game</button>
         <button class="modal-btn" id="finish-change">Change user</button>
       </div>
+      <div class="modal-lose">
+        <h2>Unfortunately, you lost, try again!</h2>
+        <button class="modal-btn" id="lose-restart">Restart game</button>
+      </div>
     </div>
+
     <script src="./js/index.js" type="module"></script>
   </body>
 </html>

@@ -6,13 +6,21 @@ import { setHeroHp } from "./heroPage/setHeroHp.js";
 import { closeHeroPage, setHeroPage } from "./heroPage/setHeroPage.js";
 import { setLevel } from "./heroPage/setHeroLevel.js";
 import { closeModalFinish, openModalFinish } from "./modal/modalFinish.js";
+import { closeModalLose } from "./modal/modalLose.js";
 import { heroes } from "./heroPage/heroes.js";
+import { generateRandomNumber } from "./heroPage/setUserHp.js";
 
 refs.form.addEventListener("submit", handleSubmit);
 refs.hero.addEventListener("click", handleClickHero);
 refs.modalBtnLevel.addEventListener("click", handleClickModalBtn);
 refs.modalBtnRestart.addEventListener("click", handleClickModalBtnRestart);
+refs.modalBtnRestartLose.addEventListener(
+  "click",
+  handleClickModalBtnRestartLose
+);
 refs.modalBtnChange.addEventListener("click", handleClickModalBtnChange);
+
+let levelId = 1;
 
 function handleSubmit(e) {
   e.preventDefault();
@@ -25,10 +33,15 @@ function handleSubmit(e) {
   closeForm();
   setLocal(user);
   // показуємо секцію hero , змінюємо фон
-  setHeroPage(user);
-}
 
-let levelId = 1;
+  setHeroPage(user);
+  refs.form.reset();
+  const hp = refs.yourHp.offsetHeight;
+  const enemyHp = refs.enemyHp.offsetHeight;
+  console.log("hp ---", hp);
+  console.log("enemyhp ---", enemyHp);
+  generateRandomNumber(levelId, hp, enemyHp);
+}
 
 function handleClickHero() {
   let countScore = +refs.infoScore.textContent;
@@ -48,6 +61,8 @@ function handleClickHero() {
 function handleClickModalBtn() {
   closeModalLevel();
   setLevel((levelId += 1));
+  const hp = refs.yourHp.offsetHeight;
+  generateRandomNumber(levelId, hp);
 }
 
 function handleClickModalBtnRestart() {
@@ -59,6 +74,20 @@ function handleClickModalBtnRestart() {
   };
   setHeroPage(user);
   closeModalFinish();
+  const hp = refs.yourHp.offsetHeight;
+  generateRandomNumber(levelId, hp);
+}
+function handleClickModalBtnRestartLose() {
+  levelId = 1;
+  const data = JSON.parse(localStorage.getItem("form"));
+  const user = {
+    name: data.name,
+    email: data.email,
+  };
+  setHeroPage(user);
+  closeModalLose();
+  const hp = refs.yourHp.offsetHeight;
+  generateRandomNumber(levelId, hp);
 }
 function handleClickModalBtnChange() {
   levelId = 1;
