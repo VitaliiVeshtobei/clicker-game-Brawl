@@ -1,6 +1,8 @@
 import { heroes } from "./heroes.js";
 import { refs } from "../refs.js";
 
+// Функія шукає героя в залежності від рівня та встановлює стартові значення полів які треба
+
 export function setLevel(id) {
   const level = heroes.find((heroe) => heroe.id === id);
   refs.heroImage.src = level.img;

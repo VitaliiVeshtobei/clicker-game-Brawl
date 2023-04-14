@@ -1,12 +1,15 @@
 import { heroes } from "./heroes.js";
 import { refs } from "../refs.js";
 import { openModalLose } from "../modal/modalLose.js";
+
 let id;
 let userHp;
 let count = 0;
 let enemyHp;
 
-export function generateRandomNumber(levelId, hp) {
+// Функція генерує в залежності від damage героя довільний damage в діапазоні від damage ворога, з частотою від 1-4 секунд
+
+export function generateRandomDamage(levelId, hp) {
   refs.modalBtnLevel.style.display = "none";
 
   if (levelId) id = levelId;
@@ -23,8 +26,7 @@ export function generateRandomNumber(levelId, hp) {
 
   if (count && enemyHp > 0) {
     refs.body.classList.add("damage");
-    const damage = setTimeout(() => {
-      console.log("damage");
+    setTimeout(() => {
       refs.body.classList.remove("damage");
     }, 1000);
 
@@ -35,7 +37,7 @@ export function generateRandomNumber(levelId, hp) {
   if (userHp < 80) refs.yourHp.style.backgroundColor = "#d40c00";
   count += 1;
 
-  const timerId = setTimeout(generateRandomNumber, delay);
+  const timerId = setTimeout(generateRandomDamage, delay);
 
   if (enemyHp <= 0) {
     refs.modalBtnLevel.style.display = "inline";

@@ -1,6 +1,8 @@
 import { refs } from "../refs.js";
 import { heroes } from "./heroes.js";
 
+// Функція встановлює силу удару за один клік в залежності від рівня героя та змінює колір HP в залежності від height
+
 export function setHeroHp(hp, levelId) {
   const oneHit = 200 / heroes[levelId - 1].hp;
 

@@ -8,7 +8,7 @@ import { setLevel } from "./heroPage/setHeroLevel.js";
 import { closeModalFinish, openModalFinish } from "./modal/modalFinish.js";
 import { closeModalLose } from "./modal/modalLose.js";
 import { heroes } from "./heroPage/heroes.js";
-import { generateRandomNumber } from "./heroPage/setUserHp.js";
+import { generateRandomDamage } from "./heroPage/enemyDamage.js";
 import { setScore } from "./heroPage/score.js";
 import {
   closeModalInstruction,
@@ -47,7 +47,7 @@ function handleClickModalBtnInstruction() {
   refs.form.reset();
   const hp = refs.yourHp.offsetHeight;
   const enemyHp = refs.enemyHp.offsetHeight;
-  generateRandomNumber(levelId, hp, enemyHp);
+  generateRandomDamage(levelId, hp, enemyHp);
 }
 
 function handleClickHero() {
@@ -66,7 +66,7 @@ function handleClickModalBtn() {
   closeModalLevel();
   setLevel((levelId += 1));
   const hp = refs.yourHp.offsetHeight;
-  generateRandomNumber(levelId, hp);
+  generateRandomDamage(levelId, hp);
 }
 
 function handleClickModalBtnRestart() {
@@ -79,7 +79,7 @@ function handleClickModalBtnRestart() {
   setHeroPage(user);
   closeModalFinish();
   const hp = refs.yourHp.offsetHeight;
-  generateRandomNumber(levelId, hp);
+  generateRandomDamage(levelId, hp);
 }
 function handleClickModalBtnRestartLose() {
   levelId = 1;
@@ -91,7 +91,7 @@ function handleClickModalBtnRestartLose() {
   setHeroPage(user);
   closeModalLose();
   const hp = refs.yourHp.offsetHeight;
-  generateRandomNumber(levelId, hp);
+  generateRandomDamage(levelId, hp);
 }
 function handleClickModalBtnChange() {
   levelId = 1;

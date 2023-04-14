@@ -1,6 +1,8 @@
 import { heroes } from "./heroes.js";
 import { refs } from "../refs.js";
 
+// Функія встановлює значення всіх полів при першому заході на сторінку hero
+
 export function setHeroPage(user) {
   refs.body.style.backgroundImage = `url(${heroes[0].bgc})`;
   refs.heroSection.style.display = "flex";
