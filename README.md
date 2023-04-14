@@ -4,13 +4,22 @@
 
 ## Description
 
-Defeat all enemies. Each enemy has its own difficulty level (easy, medium, hard, expert, pro). With each level, the enemy's health and attack power increase. Click on the enemy to attack. If the enemy defeats you, you will start from the first level. After defeating all enemies, you can replay the game or change your nickname.
+- Defeat all enemies.
+- Each enemy has its own difficulty level (easy, medium, hard, expert, pro).
+- With each level, the enemy's health and attack power increase.
+- Click on the enemy to attack.
+- If the enemy defeats you, you will start from the first level.
+- After defeating all enemies, you can replay the game or change your nickname.
 
 ---
 
 ## Requirements
 
-To run the game, open the index.html file in your web browser or use a tool like Live Server to launch it.
+To run the game, you can either:
+
+- Open the index.html file in your web browser.
+- Use a tool like Live Server to launch it.
+- Access the live link at https://clicker-game-brawl.vercel.app/
 
 ---
 
