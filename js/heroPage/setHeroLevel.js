@@ -12,4 +12,6 @@ export function setLevel(id) {
   refs.yourHp.style.height = "100%";
   refs.yourHp.style.backgroundColor = "#32c12c";
   refs.infoScore.textContent = 0;
+  refs.infoLevel.textContent = `${level.level.name}`;
+  refs.infoLevel.style.color = `${level.level.color}`;
 }

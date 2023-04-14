@@ -10,6 +10,8 @@ export function setHeroPage(user) {
   refs.heroName.style.color = heroes[0].level.color;
   refs.infoScore.textContent = "0";
   refs.infoAllClick.textContent = "0";
+  refs.infoLevel.textContent = `${heroes[0].level.name}`;
+  refs.infoLevel.style.color = `${heroes[0].level.color}`;
   refs.enemyHp.style.height = "100%";
   refs.enemyHp.style.backgroundColor = "#32c12c";
   refs.yourHp.style.height = "100%";

@@ -9,6 +9,7 @@ export const refs = {
   infoScore: document.querySelector("#info-score"),
   infoAllClick: document.querySelector("#info-clicks"),
   infoName: document.querySelector("#info-name"),
+  infoLevel: document.querySelector("#info-level"),
   enemyHp: document.querySelector("#enemy-hp"),
   yourHp: document.querySelector("#your-hp"),
   backdrop: document.querySelector(".backdrop"),
@@ -21,4 +22,6 @@ export const refs = {
   modalBtnRestartLose: document.querySelector("#lose-restart"),
   modalBtnChange: document.querySelector("#finish-change"),
   listHero: document.querySelector(".list-hero"),
+  modalInstruction: document.querySelector(".modal-instruction"),
+  modalBtnInstruction: document.querySelector("#btn-instruction"),
 };

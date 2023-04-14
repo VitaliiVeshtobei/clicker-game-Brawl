@@ -9,6 +9,11 @@ import { closeModalFinish, openModalFinish } from "./modal/modalFinish.js";
 import { closeModalLose } from "./modal/modalLose.js";
 import { heroes } from "./heroPage/heroes.js";
 import { generateRandomNumber } from "./heroPage/setUserHp.js";
+import { setScore } from "./heroPage/score.js";
+import {
+  closeModalInstruction,
+  openModalInstruction,
+} from "./modal/modalInstruction.js";
 
 refs.form.addEventListener("submit", handleSubmit);
 refs.hero.addEventListener("click", handleClickHero);
@@ -19,35 +24,34 @@ refs.modalBtnRestartLose.addEventListener(
   handleClickModalBtnRestartLose
 );
 refs.modalBtnChange.addEventListener("click", handleClickModalBtnChange);
+refs.modalBtnInstruction.addEventListener(
+  "click",
+  handleClickModalBtnInstruction
+);
 
 let levelId = 1;
+const user = {};
 
 function handleSubmit(e) {
   e.preventDefault();
-  const user = {
-    name: e.target[0].value,
-    email: e.target[1].value,
-  };
-
-  // при успішній заповненій формі скриваємо секцію з формою та записуємо дані в localstorage
+  user.name = e.target[0].value;
+  user.email = e.target[1].value;
   closeForm();
   setLocal(user);
-  // показуємо секцію hero , змінюємо фон
+  openModalInstruction();
+}
 
+function handleClickModalBtnInstruction() {
+  closeModalInstruction();
   setHeroPage(user);
   refs.form.reset();
   const hp = refs.yourHp.offsetHeight;
   const enemyHp = refs.enemyHp.offsetHeight;
-  console.log("hp ---", hp);
-  console.log("enemyhp ---", enemyHp);
   generateRandomNumber(levelId, hp, enemyHp);
 }
 
 function handleClickHero() {
-  let countScore = +refs.infoScore.textContent;
-  refs.infoScore.textContent = countScore + 1;
-  let allClicks = +refs.infoAllClick.textContent;
-  refs.infoAllClick.textContent = allClicks + 1;
+  setScore();
   let hp = refs.enemyHp.offsetHeight;
   const oneHit = setHeroHp(hp, levelId);
   if (hp <= oneHit && levelId !== heroes.length) {

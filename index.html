@@ -21,16 +21,16 @@
   <body>
     <div class="container">
       <header class="header">
-        <h1 class="header-title">Brawl Stars Clicker Game</h1>
+        <h1 class="header__title">Brawl Stars Clicker Game</h1>
       </header>
       <main>
         <section class="form-section">
-          <h2 class="form-title">Please create user!</h2>
+          <h2 class="form-section__title">Please create user!</h2>
           <form class="form">
-            <div class="form-group">
+            <div class="form__group">
               <label for="name">Name</label>
               <input
-                class="form-input"
+                class="form__input"
                 type="text"
                 id="name"
                 name="name"
@@ -38,10 +38,10 @@
                 required
               />
             </div>
-            <div class="form-group">
+            <div class="form__group">
               <label for="email">Email</label>
               <input
-                class="form-input"
+                class="form__input"
                 type="email"
                 id="email"
                 name="email"
@@ -49,25 +49,30 @@
                 required
               />
             </div>
-            <button type="submit" class="form-button">Create user</button>
+            <button type="submit" class="form__button">Create user</button>
           </form>
         </section>
         <section class="hero-section">
           <div class="hero-info">
-            <ul class="hero-info-list">
-              <li class="hero-info-item">
-                <p class="hero-info-text">
+            <ul class="hero-info__list">
+              <li class="hero-info__item">
+                <p class="hero-info__text">
                   UserName : <span id="info-name">user</span>
                 </p>
               </li>
-              <li class="hero-info-item">
-                <p class="hero-info-text">
+              <li class="hero-info__item">
+                <p class="hero-info__text">
                   Score clicks : <span id="info-score">0</span>
                 </p>
               </li>
-              <li class="hero-info-item">
-                <p class="hero-info-text">
+              <li class="hero-info__item">
+                <p class="hero-info__text">
                   All clicks : <span id="info-clicks">0</span>
+                </p>
+              </li>
+              <li class="hero-info__item">
+                <p class="hero-info__text">
+                  Level : <span id="info-level">Easy</span>
                 </p>
               </li>
             </ul>
@@ -81,18 +86,18 @@
           </div>
           <div class="hero-hp-container">
             <div class="hero-enemy">
-              <p class="hero-enemy-text">
+              <p class="hero-enemy__text">
                 <span class="hero-name">Enemy</span> HP
               </p>
-              <div class="hero-enemy-hp-container">
-                <div class="hero-enemy-hp" id="enemy-hp"></div>
+              <div class="hero-enemy__hp-container">
+                <div class="hero-enemy__hp" id="enemy-hp"></div>
               </div>
             </div>
             <div class="hero-enemy">
-              <p class="hero-enemy-text">
+              <p class="hero-enemy__text">
                 <span class="hero-name">Your</span> HP
               </p>
-              <div class="hero-enemy-hp-container">
+              <div class="hero-enemy__hp-container">
                 <div class="hero-enemy-hp" id="your-hp"></div>
               </div>
             </div>
@@ -121,6 +126,40 @@
       <div class="modal-lose">
         <h2>Unfortunately, you lost, try again!</h2>
         <button class="modal-btn" id="lose-restart">Restart game</button>
+      </div>
+      <div class="modal-instruction">
+        <h2>Instruction</h2>
+        <ol class="modal-instruction__list">
+          <li class="modal-instruction__item"><p>1. Defeat all enemies.</p></li>
+          <li class="modal-instruction__item">
+            <p>
+              2. Each enemy has its own difficulty (easy, medium, hard, expert,
+              pro).
+            </p>
+          </li>
+          <li class="modal-instruction__item">
+            <p>
+              3. With each level of enemy health and impact power increases.
+            </p>
+          </li>
+          <li class="modal-instruction__item">
+            <p>4. Click on the enemy and hit him.</p>
+          </li>
+          <li class="modal-instruction__item">
+            <p>
+              5. If the enemy defeats you, you will start from the first level.
+            </p>
+          </li>
+          <li class="modal-instruction__item">
+            <p>
+              6. After defeating all enemies, you can replay the game or change
+              your nickname.
+            </p>
+          </li>
+        </ol>
+        <button type="button" class="modal-btn" id="btn-instruction">
+          Lets go!
+        </button>
       </div>
     </div>
 
