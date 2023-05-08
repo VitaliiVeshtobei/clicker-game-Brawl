@@ -24,6 +24,7 @@ export function closeModalFinish() {
   refs.backdrop.style.display = "none";
   refs.modalFinish.style.display = "none";
   const ul = refs.listHero;
+  console.log(ul);
   while (ul.firstChild) {
     ul.removeChild(ul.firstChild);
   }

@@ -20,7 +20,8 @@ export function generateRandomDamage(levelId, hp) {
   const hero = heroes.find((hero) => id === hero.id);
   const minDamage = hero.damage.min;
   const maxDemage = hero.damage.max;
-  let randomNumber = Math.floor(Math.random() * minDamage) + maxDemage;
+  let randomNumber =
+    Math.floor(Math.random() * (maxDemage - minDamage)) + minDamage;
 
   let delay = Math.floor(Math.random() * 4000) + 1000;
 
